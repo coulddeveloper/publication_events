@@ -38,3 +38,17 @@ Resources:
           Properties:
             Path: /
             Method: post
+  PostHelloWorld:
+    Type: AWS::Serverless::Function
+    Properties:
+      Handler: com.aws.codestar.projecttemplates.handler.LambdaFunctionHandler
+      Runtime: java8
+      Role:
+        Fn::ImportValue:
+          !Join ['-', [!Ref 'ProjectId', !Ref 'AWS::Region', 'lambda_exec_role']]
+      Events:
+        PostEvent:
+          Type: Api
+          Properties:
+            Path: /
+            Method: post
