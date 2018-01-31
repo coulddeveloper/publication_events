@@ -6,7 +6,7 @@ Transform:
 Parameters:
   ProjectId:
     Type: String
-    Description: AWS CodeStar projectID used to associate new resources to team members
+    Description: Publication Event
 
 Resources:
   PostSnsSubscriber:
@@ -14,6 +14,9 @@ Resources:
     Properties:
       Handler: com.aws.codestar.projecttemplates.handler.LambdaFunctionHandler
       Runtime: java8
+      AutoPublishAlias: live
+      MemorySize: 1024
+      Timeout: 5
       Role:
         Fn::ImportValue:
           !Join ['-', [!Ref 'ProjectId', !Ref 'AWS::Region', 'LambdaTrustRole']]
