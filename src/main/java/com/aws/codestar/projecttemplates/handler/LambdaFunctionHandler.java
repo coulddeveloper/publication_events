@@ -37,7 +37,7 @@ public class LambdaFunctionHandler implements RequestHandler<SNSEvent, String> {
         
         DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
         Date date = new Date();
-        snsEvent.setSnsPublishTime(dateFormat.format(date).toString());//event.getRecords().get(0).getSNS().getTimestamp().toString());
+        snsEvent.setSnsPublishTime(event.getRecords().get(0).getSNS().getTimestamp().toString());//event.getRecords().get(0).getSNS().getTimestamp().toString());
         
         snsEvent.setLambdaReceiveTime(dateFormat.format(date).toString());
         snsEvent.setSnsMessage(event.getRecords().get(0).getSNS().getMessage());
