@@ -1,7 +1,13 @@
 package com.aws.codestar.projecttemplates;
 
 import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.AutoConfigurationPackage;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 /** Simple class to start up the application.
  *
@@ -11,9 +17,14 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  *  @ComponentScan
  */
 @SpringBootApplication
+@Configuration
+@ComponentScan("com.aws.codestar.projecttemplate.model")
+@EnableAutoConfiguration
 public class Application {
 
     public static void main(String[] args) {
-        SpringApplication.run(Application.class, args);
+    /*	ApplicationContext context = new ClassPathXmlApplicationContext(
+				"SpringBeans.xml");*/
+        SpringApplication.run(Application.class, args );
     }
 }
