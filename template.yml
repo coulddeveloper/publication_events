@@ -14,7 +14,6 @@ Resources:
     Properties:
       Handler: com.aws.codestar.projecttemplates.handler.LambdaFunctionHandler
       Runtime: java8
-      AutoPublishAlias: live
       MemorySize: 1024
       Timeout: 5
       Role:
