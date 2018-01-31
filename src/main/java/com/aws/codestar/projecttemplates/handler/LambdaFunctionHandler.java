@@ -20,11 +20,7 @@ public class LambdaFunctionHandler implements RequestHandler<SNSEvent, String> {
 	
 	private SnsModel snsModel;
 	
-	@Autowired
-    public LambdaFunctionHandler(SnsModel snsModel) {
-		this.snsModel = snsModel;
-	}
-
+ 
 	@Override
     public String handleRequest(SNSEvent event, Context context) {
         context.getLogger().log("Received event: " + event);
@@ -43,6 +39,7 @@ public class LambdaFunctionHandler implements RequestHandler<SNSEvent, String> {
         snsEvent.setSnsMessage(event.getRecords().get(0).getSNS().getMessage());
         snsEvent.setSnsMessageId(event.getRecords().get(0).getSNS().getMessageId());
         
+        snsModel = new SnsModel();
         snsModel.saveSnsEvent(snsEvent);
         return message;
     }

@@ -37,7 +37,7 @@ public class LambdaFunctionHandlerTest2 {
     @Test
     public void testLambdaFunctionHandler() {
     	SnsModel snsModel = new SnsModel();
-        LambdaFunctionHandler handler = new LambdaFunctionHandler(snsModel);
+        LambdaFunctionHandler handler = new LambdaFunctionHandler();
         Context ctx = createContext();
 
         String output = handler.handleRequest(input, ctx);
