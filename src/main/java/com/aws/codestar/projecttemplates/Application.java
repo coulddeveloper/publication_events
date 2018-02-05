@@ -17,13 +17,9 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
  *  @ComponentScan
  */
 @SpringBootApplication
-@Configuration
-@ComponentScan("com.aws.codestar.projecttemplate")
-@EnableAutoConfiguration
 public class Application {
 
     public static void main(String[] args) {
-    
-        SpringApplication.run(Application.class, args );
+        SpringApplication.run(Application.class, args);
     }
 }
