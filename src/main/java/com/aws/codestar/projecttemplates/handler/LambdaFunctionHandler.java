@@ -14,7 +14,6 @@ import com.amazonaws.services.lambda.runtime.events.SNSEvent;
 import com.aws.codestar.projectemplates.dao.SnsEvent;
 import com.aws.codestar.projecttemplate.model.SnsModel;
 
-@Component
 public class LambdaFunctionHandler implements RequestHandler<SNSEvent, String> {
 
 	
