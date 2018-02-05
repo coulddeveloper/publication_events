@@ -10,7 +10,7 @@ import org.junit.Test;
 import com.amazonaws.services.lambda.runtime.Context;
 import com.amazonaws.services.lambda.runtime.events.SNSEvent;
 import com.aws.codestar.projecttemplate.model.SnsModel;
-import com.aws.codestar.projecttemplates.handler.LambdaFunctionHandler;
+import com.aws.codestar.projecttemplates.handler.SnsSubscriberHandler;
 
 /**
  * A simple test harness for locally invoking your Lambda function handler.
@@ -37,7 +37,7 @@ public class LambdaFunctionHandlerTest2 {
     @Test
     public void testLambdaFunctionHandler() {
     	SnsModel snsModel = new SnsModel();
-        LambdaFunctionHandler handler = new LambdaFunctionHandler();
+        SnsSubscriberHandler handler = new SnsSubscriberHandler();
         Context ctx = createContext();
 
         String output = handler.handleRequest(input, ctx);
