@@ -36,7 +36,6 @@ public class LambdaFunctionHandlerTest2 {
 
     @Test
     public void testLambdaFunctionHandler() {
-    	SnsModel snsModel = new SnsModel();
         SnsSubscriberHandler handler = new SnsSubscriberHandler();
         Context ctx = createContext();
 

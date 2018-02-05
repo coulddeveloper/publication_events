@@ -9,10 +9,10 @@ Parameters:
     Description: Publication Event
 
 Resources:
-  PostSnsSubscriber:
+  PostSnsSubscriberHandler:
     Type: AWS::Serverless::Function
     Properties:
-      Handler: com.aws.codestar.projecttemplates.handler.SnsSubscriberHandler
+      Handler: com.aws.codestar.projecttemplates.handler.SnsSubscriberHandler.handleRequest
       Runtime: java8
       MemorySize: 1024
       Timeout: 5
